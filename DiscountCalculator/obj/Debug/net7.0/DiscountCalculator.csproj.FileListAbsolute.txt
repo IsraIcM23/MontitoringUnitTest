@@ -1,0 +1,15 @@
+C:\Users\Usuario\source\repos\DiscountCalculator\DiscountCalculator\bin\Debug\net7.0\DiscountCalculator.exe
+C:\Users\Usuario\source\repos\DiscountCalculator\DiscountCalculator\bin\Debug\net7.0\DiscountCalculator.deps.json
+C:\Users\Usuario\source\repos\DiscountCalculator\DiscountCalculator\bin\Debug\net7.0\DiscountCalculator.runtimeconfig.json
+C:\Users\Usuario\source\repos\DiscountCalculator\DiscountCalculator\bin\Debug\net7.0\DiscountCalculator.dll
+C:\Users\Usuario\source\repos\DiscountCalculator\DiscountCalculator\bin\Debug\net7.0\DiscountCalculator.pdb
+C:\Users\Usuario\source\repos\DiscountCalculator\DiscountCalculator\obj\Debug\net7.0\DiscountCalculator.csproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\DiscountCalculator\DiscountCalculator\obj\Debug\net7.0\DiscountCalculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\source\repos\DiscountCalculator\DiscountCalculator\obj\Debug\net7.0\DiscountCalculator.AssemblyInfoInputs.cache
+C:\Users\Usuario\source\repos\DiscountCalculator\DiscountCalculator\obj\Debug\net7.0\DiscountCalculator.AssemblyInfo.cs
+C:\Users\Usuario\source\repos\DiscountCalculator\DiscountCalculator\obj\Debug\net7.0\DiscountCalculator.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\DiscountCalculator\DiscountCalculator\obj\Debug\net7.0\DiscountCalculator.dll
+C:\Users\Usuario\source\repos\DiscountCalculator\DiscountCalculator\obj\Debug\net7.0\refint\DiscountCalculator.dll
+C:\Users\Usuario\source\repos\DiscountCalculator\DiscountCalculator\obj\Debug\net7.0\DiscountCalculator.pdb
+C:\Users\Usuario\source\repos\DiscountCalculator\DiscountCalculator\obj\Debug\net7.0\DiscountCalculator.genruntimeconfig.cache
+C:\Users\Usuario\source\repos\DiscountCalculator\DiscountCalculator\obj\Debug\net7.0\ref\DiscountCalculator.dll
