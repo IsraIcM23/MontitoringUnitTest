@@ -6,31 +6,53 @@ namespace TestCalculator
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod_GetCorrectDiscount_PerProduct()
+        public void TestMethodGetDiscountPerProductWithAsignedDiscountRate()
         {
             Product item1 = new Product();
             item1.ItemName = "Libro1";
             item1.Price = 10;
-            item1.Discount = 20;
+            item1.DiscountRate = 20;
             double actual = item1.GetProductDiscount();
-            // Ex. 10 * 0.20 = 8
+            // Ex. 10 * 0.20 = 2
+            Assert.AreEqual(2, actual);
+        }
+        [TestMethod]
+        public void TestMethodGetDiscountPerProductWithOutAsignedDiscountRate()
+        {
+            Product item1 = new Product();
+            item1.ItemName = "Libro1";
+            item1.Price = 10;
+            item1.DiscountRate = 0;
+            double actual = item1.GetProductDiscount();
+            // Ex. 10 * 0.05 = 0.5
+            Assert.AreEqual(0.5, actual);
+        }
+        [TestMethod]
+        public void TestMethodGetTotalPerProductWithDiscountRate()
+        {
+            Product item1 = new Product();
+            item1.ItemName = "Libro1";
+            item1.Price = 10;
+            item1.DiscountRate = 20;
+            double actual = item1.GetProductPriceWithDiscount();
+            //Ex. 10 * 0.2 = 2  =>  10 - 2 = 8
             Assert.AreEqual(8, actual);
         }
 
         [TestMethod]
-        public void TestMethod_GetCorrectDiscount_WithOut_Discount()
+        public void TestMethodGetTotalPerProductWithOutDiscountRate()
         {
             Product item1 = new Product();
             item1.ItemName = "Libro1";
             item1.Price = 10;
-            item1.Discount = 0;
-            double actual = item1.GetProductDiscount();
-            //Ex. 10 * 0.05 = 9.5
+            item1.DiscountRate = 0;
+            double actual = item1.GetProductPriceWithDiscount();
+            //Ex. 10 * 0.05 = 0.5  =>  10 - 0.5=9.5
             Assert.AreEqual(9.5, actual);
         }
 
         [TestMethod]
-        public void TestMethod_GetCorrectDiscount_PerPurchase()
+        public void TestMethodGetTotalDiscountPerPurchaseMore3ProductsAndLess6Products()
         {
             Product item1 = new Product();
             Product item2 = new Product();
@@ -39,19 +61,19 @@ namespace TestCalculator
 
             item1.ItemName = "Libro1";
             item1.Price = 10;
-            item1.Discount = 10;
+            item1.DiscountRate = 10;
 
             item2.ItemName = "Libro2";
-            item2.Price = 20;
-            item2.Discount = 50;
+            item2.Price = 10;
+            item2.DiscountRate = 15;
 
             item3.ItemName = "Libro3";
-            item3.Price = 100;
-            item3.Discount = 60;
+            item3.Price = 10;
+            item3.DiscountRate = 20;
 
             item4.ItemName = "Libro4";
-            item4.Price = 200;
-            item4.Discount = 50;
+            item4.Price = 10;
+            item4.DiscountRate = 30;
 
             Purchase purchase1 = new Purchase();
 
@@ -60,34 +82,80 @@ namespace TestCalculator
             purchase1.products.Add(item3);
             purchase1.products.Add(item4);
 
-            int purchaseAmount = purchase1.getPurchaseAmount();
+            //Ex. 1+1.5+2+3 = 7.5  ;   40*0.1=4    ;   7.5+4 = 11.5
+            double totalDiscountPerPurchase = purchase1.getTotalDiscountPerPurchase(); 
 
-            Assert.AreEqual(4, purchaseAmount);
+            Assert.AreEqual(11.5, totalDiscountPerPurchase);
         }
-
+        
         [TestMethod]
-        public void TestMethod_GetTotalPurchaseMore3Products()
+        public void TestMethodGetTotalDiscountPerPurchaseLessOrEqual3Products()
+        {
+            Product item1 = new Product();
+            Product item2 = new Product();
+            Product item3 = new Product();
+            
+            item1.ItemName = "Libro1";
+            item1.Price = 10;
+            item1.DiscountRate = 10;
+
+            item2.ItemName = "Libro2";
+            item2.Price = 10;
+            item2.DiscountRate = 15;
+
+            item3.ItemName = "Libro3";
+            item3.Price = 10;
+            item3.DiscountRate = 20;
+                       
+            Purchase purchase1 = new Purchase();
+
+            purchase1.products.Add(item1);
+            purchase1.products.Add(item2);
+            purchase1.products.Add(item3);
+                        
+            //Ex. 1+1.5+2 = 4.5  ;   
+            double totalDiscountPerPurchase = purchase1.getTotalDiscountPerPurchase();
+
+            Assert.AreEqual(4.5, totalDiscountPerPurchase);
+        }
+        [TestMethod]
+        public void TestMethodGetTotalDiscountPerPurchaseMore6Products()
         {
             Product item1 = new Product();
             Product item2 = new Product();
             Product item3 = new Product();
             Product item4 = new Product();
+            Product item5 = new Product();
+            Product item6 = new Product();
+            Product item7 = new Product();
 
             item1.ItemName = "Libro1";
             item1.Price = 10;
-            item1.Discount = 10;
+            item1.DiscountRate = 10;
 
             item2.ItemName = "Libro2";
-            item2.Price = 20;
-            item2.Discount = 50;
+            item2.Price = 10;
+            item2.DiscountRate = 15;
 
             item3.ItemName = "Libro3";
-            item3.Price = 100;
-            item3.Discount = 60;
+            item3.Price = 10;
+            item3.DiscountRate = 20;
 
             item4.ItemName = "Libro4";
-            item4.Price = 200;
-            item4.Discount = 50;
+            item4.Price = 10;
+            item4.DiscountRate = 30;
+
+            item5.ItemName = "Libro5";
+            item5.Price = 10;
+            item5.DiscountRate = 40;
+
+            item6.ItemName = "Libro6";
+            item6.Price = 10;
+            item6.DiscountRate = 50;
+
+            item7.ItemName = "Libro7";
+            item7.Price = 10;
+            item7.DiscountRate = 7;
 
             Purchase purchase1 = new Purchase();
 
@@ -95,47 +163,17 @@ namespace TestCalculator
             purchase1.products.Add(item2);
             purchase1.products.Add(item3);
             purchase1.products.Add(item4);
+            purchase1.products.Add(item5);
+            purchase1.products.Add(item6);
+            purchase1.products.Add(item7);
 
-            //Ex. 9+10+40+100=159*0.9 => 143.1
+            //Ex. 1+1.5+2+3+4+5+(0,7) = 17.2  ;   70*0.1=7    ;   17.2 +7 = 24.2
+            double totalDiscountPerPurchase = purchase1.getTotalDiscountPerPurchase();
 
-            double totalPurchase = purchase1.getTotalPurchase();
-
-            Assert.AreEqual(143.1, totalPurchase);
+            Assert.AreEqual(24.2, totalDiscountPerPurchase);
         }
 
-        [TestMethod]
-        public void TestMethod_GetTotalPurchaseLessOrEqual3Products()
-        {
-            Product item1 = new Product();
-            Product item2 = new Product();
-            Product item3 = new Product();
-
-            item1.ItemName = "Libro1";
-            item1.Price = 10;
-            item1.Discount = 10;
-
-            item2.ItemName = "Libro2";
-            item2.Price = 20;
-            item2.Discount = 50;
-
-            item3.ItemName = "Libro3";
-            item3.Price = 100;
-            item3.Discount = 60;
-
-
-
-            Purchase purchase1 = new Purchase();
-
-            purchase1.products.Add(item1);
-            purchase1.products.Add(item2);
-            purchase1.products.Add(item3);
-
-            //EX. 9+10+40=59
-
-            double totalPurchase = purchase1.getTotalPurchase();
-
-            Assert.AreEqual(59, totalPurchase);
-        }
+       
 
     }
 }

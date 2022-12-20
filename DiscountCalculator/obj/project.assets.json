@@ -6772,19 +6772,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
+    "C:\\Users\\Ivan Fernandez\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\DiscountCalculator\\DiscountCalculator\\DiscountCalculator.csproj",
+      "projectUniqueName": "E:\\DEV38\\monitoring\\descuento\\MontitoringUnitTest\\DiscountCalculator\\DiscountCalculator.csproj",
       "projectName": "DiscountCalculator",
-      "projectPath": "C:\\Users\\Usuario\\source\\repos\\DiscountCalculator\\DiscountCalculator\\DiscountCalculator.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\source\\repos\\DiscountCalculator\\DiscountCalculator\\obj\\",
+      "projectPath": "E:\\DEV38\\monitoring\\descuento\\MontitoringUnitTest\\DiscountCalculator\\DiscountCalculator.csproj",
+      "packagesPath": "C:\\Users\\Ivan Fernandez\\.nuget\\packages\\",
+      "outputPath": "E:\\DEV38\\monitoring\\descuento\\MontitoringUnitTest\\DiscountCalculator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ivan Fernandez\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

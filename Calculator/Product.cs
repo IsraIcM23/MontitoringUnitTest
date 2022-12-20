@@ -4,16 +4,24 @@
     {
         public string ?ItemName { get; set; }
         public double Price { get; set; }
-        public double Discount { get; set; }
+        public double DiscountRate { get; set; }
 
         public double GetProductDiscount()
         {
-            if (this.Discount == 0)
+            if (this.DiscountRate == 0)
             {
-                this.Discount = 5;
+                this.DiscountRate = 5;
             }
-            return (this.Price - (this.Price * (this.Discount / 100)));
+            return this.Price * (this.DiscountRate / 100);
         }
+        public double GetProductPriceWithDiscount(){
+            if (this.DiscountRate == 0)
+            {
+                this.DiscountRate = 5;
+            }
+            return (this.Price - GetProductDiscount());
+        }
+        
 
     }
 }

@@ -12,16 +12,12 @@ namespace Calculator
         public int TotalDiscount;
         public List<Product> products = new List<Product>();
 
-        public int getPurchaseAmount()
-        {
-            return products.Count();
-        }
-
+        
         public double getTotalPurchase()
         {
             double total=0;
             foreach (Product product in products) {
-                total = total + product.GetProductDiscount();
+                total = total + product.GetProductPriceWithDiscount();
             }
             if (products.Count() > 3)
             {
@@ -29,6 +25,25 @@ namespace Calculator
             }
 
             return Math.Round(total,2);
+        }
+        public double getTotalDiscountPerPurchase()
+        {
+            double totalDiscount = 0;
+            double totalWithOutDiscount = 0;
+            foreach (Product product in products)
+            {
+                totalDiscount = totalDiscount + product.GetProductDiscount();
+                if(products.Count() > 6 && product.DiscountRate==0) {
+                    totalWithOutDiscount = totalWithOutDiscount + (product.Price*0.07);
+                }
+                else totalWithOutDiscount = totalWithOutDiscount + product.Price;
+            }
+            if (products.Count() > 3)
+            {
+                totalDiscount = totalDiscount + (totalWithOutDiscount * 0.1);
+            }
+
+            return Math.Round(totalDiscount, 2);
         }
 
         public void getTotalDiscount()
